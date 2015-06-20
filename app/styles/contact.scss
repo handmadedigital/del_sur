@@ -1,0 +1,108 @@
+.contact-page-form-wrapper{
+  background: url('/assets/images/contact-bk.jpg');
+  width: 100%;
+  margin-top: -1%;
+}
+#contactComponentWrapper{
+  margin-bottom: 50px;
+  .section-title{
+    margin-top: 40px;
+  }
+
+  .section-description{
+    a{
+      color: #c4da44
+    }
+  }
+
+  .list-delsure-info{
+    list-style-type: none;
+
+    li{
+      display: inline-block;
+      margin: 0 3em;
+      color: #333333;
+      font-weight: 100;
+      text-align: center;
+      width: 11em;
+      font-size: 16px;
+    }
+  }
+}
+
+.contact-form-wrapper{
+  margin-top: 50px;
+
+  input{
+    border-radius: 0;
+  }
+
+  textarea{
+    border-radius: 0;
+    height: 200px;
+  }
+
+  .contact-form-btn{
+    width: 100%;
+    border: none;
+    background: #c4da44;
+    color: #fff;
+    padding: 10px;
+    font-style: italic;
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.list-contact-info{
+  width: 100%;
+	li {
+    width: 5em;
+    height: 5em;
+    text-align: center;
+    line-height: 2em;
+    border-radius: 5em;
+    background: none;
+    margin: 0 7em;
+    display: inline-block;
+    color: white;
+    position: relative;
+    border: solid 1px #c4da44;
+  }
+
+  li::before{
+    content: '';
+    position: absolute;
+    top: 2.5em;
+    left: -14.4em;
+    width: 14.4em;
+    height: .2em;
+    background: #c4da44;
+    z-index: -1;
+  }
+
+
+
+  li:first-child::before {
+    display: none;
+  }
+}

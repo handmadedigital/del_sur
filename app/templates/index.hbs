@@ -1,0 +1,128 @@
+<div id="indexWrapper">
+	<div id="mainBanner">
+		<div class="row">
+			<div class="container">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="banner-quote-wrapper">
+						<div class="quote-wrapper">
+							<h1 class="main-banner-quote">FOOD CAN...<span class="main-banner-changeing-text">   {{liquid-bind quote}}</span></h1>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+		<div class="row">
+			<div class="container">
+				<div class="main-banner-buttons-wrapper">
+					<div class="col-md-4">
+						<button>Catalog</button>
+					</div>
+					<div class="col-md-4">
+						<button>Get To Know Us</button>
+					</div>
+					<div class="col-md-4">
+						<button>Contact Us</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- END MAIN BANNER -->
+
+	<div id="ourPhilosophyWrapper">
+		<div class="row">
+			<div class="container">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="section-title">
+						<h2>Our Philosophy</h2>
+						<div class="section-title-underline"></div>
+					</div>
+					<div class="section-content">
+						<p class="italic">We were born out of the necessity to provide the new generations with authentic food that met their healthy and natural lifestyle. At Del Sur our mission became a simple one; we were motivated to breach the gap between old and new, by providing delectable goods that are modern, fun, and innovative but never lowering our standards on quality, health, and culture. We are continually expanding our market, growing by leaps and bounds. Our objective of being in every store across the nation is closer every day. We want to surprise people’s palates with authentic Hispanic products that contain a twist of modern flavors with traditional roots. We know that once they have a taste of Del Sur they will discover we are passionately natural.</p>
+
+						<div class="gmo-free-badges-wrapper">
+							<div class="row">
+								<div class="col-md-6 col-md-offset-3">
+									<img src="assets/images/gmo-free-badges.png">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- END PHILOSOPHY -->
+
+	<div id="indexRecipesWrapper">
+		<div class="row">
+			<div class="container">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="section-title">
+						<h2>Recipes</h2>
+						<div class="section-title-underline"></div>
+					</div>
+					<div class="section-content">
+						<p class="section-description">Here are some of our secrets to cooking those delicious home cooked meals that make home feel like home.</p>
+
+						<div class="index-recipe-images-wrapper">
+							<img src="/assets/images/recepies-1.png">
+							<img src="/assets/images/recepies-2.png">
+							<img class="active" src="/assets/images/recepies-3.png">
+							<img src="/assets/images/recepies-4.png">
+							<img src="/assets/images/recepies-5.png">
+						</div>
+
+						<div class="index-recipe-details">
+							<h2>{{recipeTitle}}</h2>
+							<p>{{recipeDescription}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="indexCallToActionWrapper">
+		<div class="row">
+			<div class="container">
+				<div class="col-sm-12">
+					<h1>SUBSCRIBE BELOW & GET EXLUSIVE RECIPES, HEALTH TIPS, & MORE!</h1>
+					<div class="call-to-action-input">
+						<form class="form-inline">
+							<div class="form-group">
+								{{input type="email" value=email placeholder="Email Address" class="form-control"}}
+							</div>
+							<button type="submit" class="btn btn-default index-cta-btn">Subscribe</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="indexOurProductsWrapper">
+		<div class="row">
+			<div class="container">
+				<div class="col-md-12">
+					<div class="section-title">
+						<h2>Our Products</h2>
+						<div class="section-title-underline"></div>
+					</div>
+					<div class="section-content">
+						<div class="our-products-images-wrapper">
+							<img src="/assets/images/products-sprite.png">
+						</div>
+						<div class="center">
+							{{#link-to 'catalog'}}<button class="btn btn-primary btn-large">See Catalog</button>{{/link-to}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{{contact-section}}
+</div>

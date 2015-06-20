@@ -1,0 +1,54 @@
+#aboutBanner{
+	background: url('/assets/images/about-main-bg.jpg');
+	width: 100%;
+	padding-bottom: 60px; 
+
+	.section-title{
+		margin-top: 20%;
+		color: #fff;
+	}
+
+	.section-content{
+		padding: 0 80px;
+		p{
+			color: #fff;
+			font-style: italic;
+			font-weight: 400;
+		}
+	}
+}
+
+#aboutCallToAction{
+	background: #a0b61e;
+	padding:15px;
+
+	h1{
+		font-family: 'Amatic SC', cursive;
+		color: #fff;
+		font-size: 55px;
+	}
+
+	button{
+		background: #fff;
+		color: #a0b61e;
+		font-size: 14px;
+		  padding: 12px 30px;
+  margin-top: 17%;
+  margin-left: -65%;
+  border: #fff;
+	}
+}
+
+#aboutOurFamilyWrapper{
+	background: url('/assets/images/our-family-bk.jpg');
+	width: 100%;
+
+	.section-title{
+		margin-top: 60px;
+	}
+
+	img{
+		width: 100%;
+		margin-top: 50px;
+	}
+}

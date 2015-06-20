@@ -1,0 +1,75 @@
+#catalogBanner{
+	background: url('/assets/images/ctalog-main-bk.jpg');
+	width: 100%;
+	padding-bottom: 40px;
+
+	.catalog-banner-title{
+		text-align: center;
+		margin-top: 20%;
+
+		h3, h1{
+			font-family: 'Amatic SC', cursive;
+		}
+
+		h3{
+			font-size: 35px;
+		}
+
+		h1{
+			font-size: 65px;
+			color: #fff;
+			margin-top: -1%;
+		}
+	}
+
+	.list-catalog-banner-categories{
+		list-style-type: none;
+
+		li{
+			text-align: center;
+			display: inline-block;
+			max-width: 12.1%;
+			margin: 0 1%;
+			padding: 0;
+			img{
+				width: 80%;
+			}
+			p{
+				font-style: italic;
+				color: #fff;
+				margin-top: 10px;
+			}
+		}
+	}
+}
+
+#catalogCallToActionWrapper{
+	background: url('/assets/images/catalog-cta-bg.jpg');
+	margin: 0 !important;;
+
+	h1{
+		text-align: center;
+		color: #fff;
+		font-size: 100px;
+		font-family: 'Amatic SC', cursive;
+		padding: 15px;
+		margin-bottom: 0;
+	}
+}
+
+#displayProductsWrapper{
+	padding-top: 70px;
+	padding-bottom: 100px;
+	background: url('/assets/images/catalog-product-bk.jpg');
+	margin: 0;
+
+	.ind-product-wrapper{
+		text-align: center;
+
+		h5{
+			color: #d25a5d;
+			font-size: 22px;
+			font-weight: 100;
+		}
+	}
+}

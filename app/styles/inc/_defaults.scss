@@ -1,0 +1,40 @@
+$section-title-border: solid 3px #a0b61e;
+.italic{font-style: italic;}
+.center{text-align: center;}
+
+.section-title{
+	margin-left: auto;
+	margin-right: auto;
+	width: 30%;
+
+	h2{
+		text-align: center;
+		font-family: 'Amatic SC', cursive;
+		font-size: 55px;
+	}
+
+	.section-title-underline{
+		background: #e6f87f;
+		height: 3px;
+		width: 120px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.section-content{
+	margin-top: 3%;
+	p{
+		font-size: 20px;
+		font-weight: 300;
+		line-height: 220%;
+		text-align: center;
+	}
+}
+
+.section-description{
+	font-style: italic;
+	margin-bottom: 35px;
+	font-size: 24px !important;;
+}
+

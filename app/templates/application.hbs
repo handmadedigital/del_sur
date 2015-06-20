@@ -1,3 +1,25 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<div id="header">
+	<nav class="main-nav">
+		<div class="row">
+			<div class="col-md-2">
+				<div class="nav-brand">
+					<img src="/assets/images/logo.png">
+				</div>
+			</div>
+			<div class="col-md-10">
+				<div class="main-nav-menu">
+					<ul class="list-main-nav-menu">
+						<li>{{#link-to 'index'}}Home{{/link-to}}</li>
+						<li>{{#link-to 'about'}}About{{/link-to}}</li>
+						<li>{{#link-to 'recipes'}}Recipes{{/link-to}}</li>
+						<li>{{#link-to 'catalog'}}Catalog{{/link-to}}</li>
+						<li>{{#link-to 'blogs'}}Blogs{{/link-to}}</li>
+						<li>{{#link-to 'contact'}}Contact{{/link-to}}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+</div>
 
-{{outlet}}
+{{liquid-outlet}}
