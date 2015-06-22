@@ -73,8 +73,8 @@ h1,h2,h3,h4,h5,h6,p,td,span,a,li{
 }
 
 #ourPhilosophyWrapper{
-	padding: 20px;
-	padding-bottom: 50px;
+	padding: 60px;
+	padding-bottom: 90px;
 
 	.gmo-free-badges-wrapper{
 		text-align: center;
@@ -89,13 +89,20 @@ h1,h2,h3,h4,h5,h6,p,td,span,a,li{
 #indexRecipesWrapper{
 	background: url('/assets/images/recepies-bg.jpg');
 	width: 100%;
+  	padding-top: 60px;
+  	padding-bottom: 60px;
 
 	.index-recipe-images-wrapper{
+	  	a:hover img{
+			border-color: #d5ee47;
+			z-index: 99;
+		}
 		img{
 			float: left;
-			border: solid 12px #dfdddc;
+		  	border: solid 12px rgba(0, 0, 0, 0.1);
 			border-radius: 50%;
-			width: 20%;
+		  	width: calc(20% + 12px);
+		  	margin: 0 -6px 0 -6px;
 		}
 		img.active{
 			border-color: #d5ee47;
@@ -173,6 +180,7 @@ h1,h2,h3,h4,h5,h6,p,td,span,a,li{
 	background: url('/assets/images/catalog-bg.jpg');
 	width: 100%;
 	border-bottom: solid 4px #e3e4e1;
+  	padding-bottom: 50px;
 
 	.section-title{
 		margin-top: 100px;
