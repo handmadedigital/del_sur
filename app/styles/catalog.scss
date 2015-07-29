@@ -3,9 +3,14 @@
 	width: 100%;
 	padding-bottom: 40px;
 
+  .catalog-title-banner{
+    cursor: pointer;
+  }
+
 	.catalog-banner-title{
 		text-align: center;
 		margin-top: 20%;
+    cursor: pointer;
 
 		h3, h1{
 			font-family: 'Amatic SC', cursive;
@@ -129,6 +134,11 @@
   margin: 0 !important;
 }
 
+.catalog-title-banner{
+  cursor: pointer !important;
+  margin: 2px 0 !important;
+}
+
 #saltyTitle{
   background: url('/assets/images/catalog/banners/salty-title.png');
   margin: 0 !important;
@@ -182,12 +192,9 @@
 
 
 
-
 .catalog-categories-body{
-  padding-top: 70px;
-  padding-bottom: 100px;
 
-  margin: 0;
+  margin: 2px 0;
 
   .ind-product-wrapper{
 	text-align: center;

@@ -1,16 +1,24 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-	// initial value
+	actions: {
+    displayProducts: function(category){
+      var display_state = Ember.get(category, 'displayProducts');
 
-  //isExpanded: false,
-  //  actions: {
-  //   expand: function() {
-  //         console.log("this is working")
-  //          this.set('isExpanded', true);
-  //    },
-  //    contract: function() {
-  //          this.set('isExpanded', false);
-  //    }
-  //}
+      if(display_state === false){
+        Ember.set(category, 'displayProducts', true);
+      } else {
+        Ember.set(category, 'displayProducts', false);
+      }
+    },
+    displayProductInfo: function(category){
+      var display_state = Ember.get(category, 'isExtended');
+
+      if(display_state === false){
+        Ember.set(category, 'isExtended', true);
+      } else {
+        Ember.set(category, 'isExtended', false);
+      }
+    }
+  }
 });
