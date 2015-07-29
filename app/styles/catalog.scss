@@ -89,6 +89,9 @@
   }
 }
 
+.catalog-body-padding {
+  margin: 80px 0;
+}
 
 .catalog-title-banner{
 	h1{
@@ -99,7 +102,13 @@
 		padding: 15px;
 		margin-bottom: 0;
     margin-top: 0;
+    -webkit-transition: 0.2s; /* Safari */
+    transition: 0.2s;
 	}
+}
+
+.catalog-title-banner:hover{
+  background-size: 110%;
 }
 
 .ind-product-wrapper{
@@ -114,22 +123,22 @@
 }
 
 
-#ember570 .panel-heading, #ember573 .panel-heading{
+#fruitTitle{
   background: url('/assets/images/catalog-cta-bg.jpg');
   margin: 0 !important;
 }
 
-#ember571 .panel-heading{
+#peruTitle{
   background: url('/assets/images/catalog-cta-peru-bg.jpg');
   margin: 0 !important;
 }
 
-#ember572 .panel-heading {
+#bakingTitle{
   background: url('/assets/images/catalog-cta-baking-bg.jpg');
   margin: 0 !important;
 }
 
-#ember564 .panel-heading {
+#beansTitle{
   background: url('/assets/images/catalog-cta-beans-bg.jpg');
   margin: 0 !important;
 }
@@ -164,27 +173,27 @@
   margin: 0 !important;
 }
 
-#ember565 .panel-heading{
+#pastaTitle{
   background: url('/assets/images/catalog/banners/pasta-title.png');
   margin: 0 !important;
 }
 
-#ember567 .panel-heading {
+#condimentsTitle{
   background: url('/assets/images/catalog/banners/condiments-title.png');
   margin: 0 !important;
 }
 
-#ember568 .panel-heading {
+#sweetsTitle{
   background: url('/assets/images/catalog/banners/sweets.png');
   margin: 0 !important;
 }
 
-#ember569 .panel-heading {
+#spicesTitle{
   background: url('/assets/images/catalog/banners/spices-title.png');
   margin: 0 !important;
 }
 
-#ember566 .panel-heading {
+#frozenTitle{
   background: url('/assets/images/catalog/banners/frozen-title.png');
   margin: 0 !important;
 }
