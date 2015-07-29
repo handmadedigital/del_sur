@@ -26,14 +26,14 @@
 								<p>Rice</p>
 							</li>
 
-                <li>
-                    <img src="/assets/images/products/small/white-sugar.png">
-                    <p>Sugar Products</p>
-                </li>
-                <li>
-                    <img src="/assets/images/products/small/elbows.png">
-                    <p>Pasta</p>
-                </li>
+                            <li>
+                                <img src="/assets/images/products/small/white-sugar.png">
+                                <p>Sugar Products</p>
+                            </li>
+                            <li>
+                                <img src="/assets/images/products/small/elbows.png">
+                                <p>Pasta</p>
+                            </li>
 
 						</ul>
 					</div>
@@ -41,6 +41,7 @@
 			</div>
 		</div>
 	</div>
+
 
 	<div id="ourPhilosophyWrapper">
 		<div class="row">
@@ -66,696 +67,695 @@
 		</div>
 	</div>
 
-    <div class="catalog-title-banner" id="catalogSaltyTitleWrapper">
-        <h1>Salty Snacks</h1>
-    </div>
-
-    <div class="catalog-categories-body" id="displayProductsSaltyWrapper">
-        <div class="row">
-            <div class="container">
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/crispitinas-garlic.png">
-                        <h5>Crispitinas Garlic</h5>
-                        <p>Crispitinas<br/>2.5 0z pk18</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/crispitinas.png">
-                        <h5>Crispitinas Original</h5>
-                        <p>Crispitinas<br/>2.5 0z pk18</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/chapitas-cheese.png">
-                        <h5>Chapitas Cheese</h5>
-                        <p>Chapitas<br/>2.5 0z pk18</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/chapitas.png">
-                        <h5>Chapitas Original</h5>
-                        <p>Chapitas<br/>2.5 0z pk18</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/cronchitas.png">
-                        <h5>Cronchitas Cheese</h5>
-                        <p>Cronchitas<br/>4 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/sea-salt-chips.png">
-                        <h5>Cronchitas Original Sea Salt</h5>
-                        <p>Cronchitas<br/>4 0z pk12</p>
-                    </div>
+    {{#each model as |category|}}
+        <div class="catalog-title-banner" id="{{category.headerBgId}}">
+            <a href="#" {{action "displayProducts" category.id}}>
+                <h1>{{category.name}}</h1>
+            </a>
+        </div>
+        <div class="catalog-categories-body" id="{{category.backgroundId}}">
+            <div class="row">
+                <div class="container">
+                    {{#if category.displayProducts}}
+                        {{#each category.products as |product|}}
+                            {{#if isExtended}}
+                                <div class="expanded-product-wrapper">
+                                    <div class="col-md-12">
+                                        <div {{action "contract" on="keyPress"}}>
+                                            <i class="glyphicon glyphicon-envelope"></i>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="ind-product-wrapper">
+                                                <img src="{{product.productImg}}"><br/>
+                                                <img class="thumbnailImage" src="{{product.productImg}}">
+                                                <img class="thumbnailImage" src="{{product.labelImg}}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="product-info-wrapper">
+                                                <h1>{{product.engName}}</h1>
+                                                <h4>{{product.spaName}} - {{product.quantity}}</h4>
+                                                <p>{{product.description}}</p>
+                                                <button class="btn btn-default"><a href="#">Get a Quote</a></button> 
+                                                <button class="btn btn-default"><a href="#">Download Catalog</a></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>    
+                            {{else}}
+                                <div class="col-md-4">
+                                    <div  class="ind-product-wrapper">
+                                        <div {{action "product.expand" on="keyPress"}}> 
+                                            <img src="{{product.productImg}}" >
+                                            <h5>{{product.engName}}</h5>
+                                            <p>{{product.spaName}}<br/>{{product.quantity}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {{/if}}
+                        {{/each}}
+                    {{/if}}
                 </div>
             </div>
-        </div>
-    </div>
+        </div>                  
+    {{/each}}
 
-    <div class="catalog-title-banner" id="catalogOilTitleWrapper">
-        <h1>Cooking Oil</h1>
-    </div>
+    <div id="accordionWrapper">    
+            {{#em-accordion configName='bs' selected-idx=1}}
+                    {{#em-accordion-item title="Salty Snacks"}}
+                        <div class="catalog-categories-body" id="displayProductsSaltyWrapper">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/crispitinas-garlic.png">
+                                            <h5>Crispitinas Garlic</h5>
+                                            <p>Crispitinas<br/>2.5 0z pk18</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/crispitinas.png">
+                                            <h5>Crispitinas Original</h5>
+                                            <p>Crispitinas<br/>2.5 0z pk18</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/chapitas-cheese.png">
+                                            <h5>Chapitas Cheese</h5>
+                                            <p>Chapitas<br/>2.5 0z pk18</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/chapitas.png">
+                                            <h5>Chapitas Original</h5>
+                                            <p>Chapitas<br/>2.5 0z pk18</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/cronchitas.png">
+                                            <h5>Cronchitas Cheese</h5>
+                                            <p>Cronchitas<br/>4 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/sea-salt-chips.png">
+                                            <h5>Cronchitas Original Sea Salt</h5>
+                                            <p>Cronchitas<br/>4 0z pk12</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/em-accordion-item}}
+                    {{#em-accordion-item title="Cooking Oil"}}
+                        <div class="catalog-categories-body" id="displayProductsOilWrapper">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-6">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/oil-small.png">
+                                            <h5>Sunflower Oil 1L</h5>
+                                            <p>Aceite De Girasol 1L<br/>1L pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/oil-big.png">
+                                            <h5>Sunflower Oil 3L</h5>
+                                            <p>Aceite De Girasol 3L<br/>3L pk12</p>
+                                        </div>
+                                    </div>
 
-    <div class="catalog-categories-body" id="displayProductsOilWrapper">
-        <div class="row">
-            <div class="container">
-                <div class="col-md-6">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/oil-small.png">
-                        <h5>Sunflower Oil 1L</h5>
-                        <p>Aceite De Girasol 1L<br/>1L pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/oil-big.png">
-                        <h5>Sunflower Oil 3L</h5>
-                        <p>Aceite De Girasol 3L<br/>3L pk12</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="catalog-title-banner" id="catalogMilkTitleWrapper">
-        <h1>Canned Milk</h1>
-    </div>
-
-    <div class="catalog-categories-body" id="displayProductsMilkWrapper">
-        <div class="row">
-            <div class="container">
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/evaporated-milk.png">
-                        <h5>Evaporated Milk</h5>
-                        <p>Leche Evaporada<br/>12 0z pk24</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/condensed-milk.png">
-                        <h5>Sweet Condensed Milk</h5>
-                        <p>Leche Condensada<br/>12 0z pk24</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/tubi-snack.png">
-                        <h5>Tubi Snack</h5>
-                        <p>Leche Condensada Azucarada<br/>50 GR Unit - 6/12 Boxes</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="catalog-title-banner" id="catalogRiceTitleWrapper">
-        <h1>Rice</h1>
-    </div>
-
-    <div class="catalog-categories-body" id="displayProductsRiceWrapper">
-        <div class="row">
-            <div class="container">
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/extra-long-rice.png">
-                        <h5>Extra Long Grain Rice</h5>
-                        <p>Arroz De Grano Extra Largo Precocido<br/>50 lb pk1</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/parboiled-long.png">
-                        <h5>Parboiled Long Grain Rice 50lb</h5>
-                        <p>Arroz De Grano Largo Precocido<br/>50 lb pk1</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/brown-rice.png">
-                        <h5>Parboiled Brown Rice 5lb</h5>
-                        <p>Arroz Integral Precocido<br/>5 lb pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/white-rice.png">
-                        <h5>Extra Long Grain Rice</h5>
-                        <p>Arroz De Grano Extra Largo<br/>5 lb pk12/10lb pk6/20lb pk3</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/parboiled-rice.png">
-                        <h5>Parboiled Long Grain Rice</h5>
-                        <p>Arroz Precocido De Grano Largo<br/>5 lb pk12/10lb pk6/20lb pk3</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="catalog-title-banner" id="catalogSugarTitleWrapper">
-        <h1>Sugar Products</h1>
-    </div>
-
-    <div class="catalog-categories-body" id="displayProductsSugarWrapper">
-        <div class="row">
-            <div class="container">
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/white-sugar.png">
-                        <h5>White Sugar</h5>
-                        <p>Azucar Blanca<br/>2lb pk20</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/brown-sugar.png">
-                        <h5>Turbinado Sugar</h5>
-                        <p>Azucar Morena<br/>2lb pk20</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/panela-1.png">
-                        <h5>Hard Brown Sugar 1 Ea.</h5>
-                        <p>Panela<br/>36 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/panela-4.png">
-                        <h5>Hard Brown Sugar 4 Ea.</h5>
-                        <p>Panela<br/>16.3 0z pk24</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="catalog-title-banner" id="catalogBeansTitleWrapper">
-        <h1>Canned Beans</h1>
-    </div>
-
-    <div class="catalog-categories-body" id="displayProductsBeansWrapper">
-        <div class="row">
-            <div class="container">
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/black-beans.png">
-                        <h5>Black Beans</h5>
-                        <p>Frijoles Negros<br/>4.7 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/cranberry-beans-antiqueno-style.png">
-                        <h5>Cranberry Beans Antiqueno Style</h5>
-                        <p>Frijol Antiqueno<br/>4.7 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/cranberry-beans-spicy-hot.png">
-                        <h5>Cranberry Beans Spicy Hot</h5>
-                        <p>Frijol Cargamato Picante<br/>4.7 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/cranberry-beans-smoked-flavored.png">
-                        <h5>Cranberry Beans Smoked Flavored</h5>
-                        <p>Frijol Cargamato Ahumado<br/>4.7 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/cranberry-beans-water-salt.png">
-                        <h5>Cranberry Beans with Water and Salt</h5>
-                        <p>Frijol Cargamato en Agua y Sal<br/>4.7 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/cranberry-beans-tomatos-onions.png">
-                        <h5>Cranberry Beans with Tomato and Onions</h5>
-                        <p>Churros<br/>4.7 0z pk12</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="catalog-title-banner" id="catalogPastaTitleWrapper">
-        <h1>Pasta</h1>
-    </div>
-
-    <div class="catalog-categories-body" id="displayProductsPastaWrapper">
-        <div class="row">
-            <div class="container">
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/spaghetti.png">
-                        <h5>Spaghetti</h5>
-                        <p>Spagueti<br/>16 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/elbows.png">
-                        <h5>Elbows</h5>
-                        <p>Codos<br/>16 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/fusilli.png">
-                        <h5>Fusilli</h5>
-                        <p>Tornillo<br/>16 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/rigatoni.png">
-                        <h5>Rigatoni</h5>
-                        <p>Macarron<br/>16 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/shells.png">
-                        <h5>Shells</h5>
-                        <p>Conchas<br/>16 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/noodles.png">
-                        <h5>Noodles</h5>
-                        <p>Fideos<br/>16 0z pk12</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="catalog-title-banner" id="catalogFrozenTitleWrapper">
-        <h1>Frozen Products</h1>
-    </div>
-
-    <div class="catalog-categories-body" id="displayProductsFrozenWrapper">
-        <div class="row">
-            <div class="container">
-                <div class="col-md-6">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/colombian.png">
-                        <h5>Colombian Sausage</h5>
-                        <p>Chorizo Colombiano<br/>1lb pk20</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/mexican.png">
-                        <h5>Mexican Sausage</h5>
-                        <p>Chorizo Mexicano<br/>1lb pk20</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="catalog-title-banner" id="catalogCondimentsTitleWrapper">
-        <h1>Condiments</h1>
-    </div>
-
-    <div class="catalog-categories-body" id="displayProductsCondimentsWrapper">
-        <div class="row">
-            <div class="container">
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/hot-sauce.png">
-                        <h5>Hot Sauce</h5>
-                        <p>Salsa De Aji picante<br/>6 0z pk24</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/latin-style-hot-seasoning.png">
-                        <h5>Latin Style Hot Seasoning</h5>
-                        <p>Aji Criollo<br/>8.5 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/tomatoe-onion-sofrito.png">
-                        <h5>Tomatoe &amp; Onion Sofrito</h5>
-                        <p>Hogao<br/>8.46 0z pk24</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/chimichurri.png">
-                        <h5>Chimichurri</h5>
-                        <p>Chimichurri<br/>8.4 0z pk24</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="catalog-title-banner" id="catalogSweetsTitleWrapper">
-        <h1>Sweet Delights</h1>
-    </div>
-
-    <div class="catalog-categories-body" id="displayProductsSweetsWrapper">
-        <div class="row">
-            <div class="container">
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/brown-caramel.png">
-                        <h5>Brown Caramel</h5>
-                        <p>Panelitas<br/>4.7 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/guava-cubes-big.png">
-                        <h5>Guava Cubes</h5>
-                        <p>Bocadillo De Guayaba<br/>9.87 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/coco-caramel.png">
-                        <h5>Coconut With Caramel</h5>
-                        <p>Cocada<br/>4.7 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/green-figs.png">
-                        <h5>Green Figs With Caremel Spread</h5>
-                        <p>Panelitas<br/>5.2 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/guava-caramel-fusion.png">
-                        <h5>Caramel &amp; Guava Fusion</h5>
-                        <p>Guayaba &amp; Caramelo<br/>4.7 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/guava-tume.png">
-                        <h5>Guava Tume</h5>
-                        <p>Tumes<br/>11.28 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/peanut.png">
-                        <h5>Peanut Nougat</h5>
-                        <p>Turron De Mani<br/>4.7 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/guava-cream.png">
-                        <h5>Guava Cream</h5>
-                        <p>Bocadillo De Guayaba<br/>14.11 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/mix-caramel.png">
-                        <h5>Mix Caramel</h5>
-                        <p>Dulce De Leche Tradicional<br/>4.6 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/velez-roll.png">
-                        <h5>Roll From Velez</h5>
-                        <p>Valeno Bocadillo De Guayaba<br/>14.8 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/guava-crackers.png">
-                        <h5>Crackers With Guava</h5>
-                        <p>Gallete Rellena Con Jalea De Guayaba Y Dulce De Leche Tradicional<br/>5.2 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/wafer.png">
-                        <h5>Wafer With Caramel</h5>
-                        <p>Obleas Y Dulce De Leche Tradicional<br/>5.29 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/manjar-blanco.png">
-                        <h5>Traditional Caramel Spread</h5>
-                        <p>Manjar Blanco - Dulce De Leche<br/>8.11 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/coco-cubes.png">
-                        <h5>Coconut Caramel Snacks</h5>
-                        <p>Coconut Caramel Snacks<br/>1.76 0z pk24</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/leche-cubes.png">
-                        <h5>Milk Caramel Squares</h5>
-                        <p>Lechitas<br/>1.76 0z pk24</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/guava-cubes.png">
-                        <h5>Guava Cube Snacks</h5>
-                        <p>Bocadillos<br/>1.76 0z pk24</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div class="catalog-title-banner" id="catalogPeppersTitleWrapper">
-        <h1>Peppers &amp; Olives in Brine</h1>
-    </div>
-
-    <div class="catalog-categories-body" id="displayProductsPeppersWrapper">
-        <div class="row">
-            <div class="container">
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/alfonso-olives-in-brine.png">
-                        <h5>Alfonso Olives In Brine</h5>
-                        <p>Aceitunas En Salmuera<br/>20 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/red-hot-pepper-in-brine.png">
-                        <h5>Red Hot Pepper In Brine</h5>
-                        <p>Ajil Rocoto En Salmuera<br/>20 0z pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/yellow-chilli-pepper-in-brine.png">
-                        <h5>Yellow Chilli Pepper In Brine</h5>
-                        <p>Ajil Amarillo En Salmuera<br/>4.7 0z pk12</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-	<div class="catalog-title-banner" id="catalogFruitTitleWrapper">
-		<h1>Nectars</h1>
-	</div>
-
-	<div class="catalog-categories-body" id="displayProductsFruitWrapper">
-		<div class="row">
-			<div class="container">
-				<div class="col-md-4">
-					<div class="ind-product-wrapper">
-						<img src="/assets/images/products/small/purple-drink.png">
-						<h5>Purple Corn Drink</h5>
-						<p>Chicha Morada<br/>500 ml pk6</p>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="ind-product-wrapper">
-						<img src="/assets/images/products/small/mango.png">
-						<h5>Mango Juice</h5>
-						<p>Jugo De Mango<br/>500 ml pk6</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-    <div class="catalog-title-banner" id="catalogPeruTitleWrapper">
-        <h1>Special Condiments &amp; Spices</h1>
-    </div>
-
-    <div class="catalog-categories-body" id="displayProductsPeruWrapper">
-        <div class="row">
-            <div class="container">
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/garlic-paste.png">
-                        <h5>Garlic Paste</h5>
-                        <p>Ajo En Pasta<br/>8 Oz pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/basil-pesto-paste.png">
-                        <h5>Basil Pesto Paste</h5>
-                        <p>Albahaca En Pasta<br/>8 Oz pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/yellow-chilli-paste.png">
-                        <h5>Yellow Chilli Paste</h5>
-                        <p>Pasta De Aji Amarillo<br/>8 Oz pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/panca-pepper-paste.png">
-                        <h5>Panca Pepper Paste</h5>
-                        <p>Aji Panca<br/>8 Oz pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/red-hot-pepper-paste.png">
-                        <h5>Red Hot Pepper Paste</h5>
-                        <p>Pasta De Aji Rocoto<br/>8 Oz pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/ollucos.png">
-                        <h5>Ollucos In Brine</h5>
-                        <p>Ollucos En Salmuera<br/>20 Oz pk24</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="catalog-title-banner" id="catalogBakingTitleWrapper">
-        <h1>Baking Mixes</h1>
-    </div>
-
-    <div class="catalog-categories-body" id="displayProductsBakingWrapper">
-        <div class="row">
-            <div class="container">
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/pandebono-mix.png">
-                        <h5>Pandebono Mix</h5>
-                        <p>Pandebono<br/>14.1 Oz pk20</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/bunuelo-mix.png">
-                        <h5>Bunuelo Mix</h5>
-                        <p>Bunuelos<br/>14.1 Oz pk20</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/yuca-bread-mix.png">
-                        <h5>Yuca Bread Mix</h5>
-                        <p>Pan De Yuca<br/>14.1 Oz pk20</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/traditional-custard.png">
-                        <h5>Traditional Custard</h5>
-                        <p>Natilla<br/>14.1 Oz pk20</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/churro-mix.png">
-                        <h5>Churro-Mix</h5>
-                        <p>Churros<br/>14.1 Oz pk20</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="catalog-title-banner" id="catalogFruitTitleWrapper">
-        <h1>Jarred Fruits</h1>
-    </div>
-
-    <div class="catalog-categories-body" id="displayProductsFruitWrapper">
-        <div class="row">
-            <div class="container">
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/soursop-in-syrup.png">
-                        <h5>Soursop In Syrup</h5>
-                        <p>Guanabana En Almbar<br/>11.5 Oz pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/peach-palm-fruit.png">
-                        <h5>Peach Palm Fruit</h5>
-                        <p>Chontaduro/Pejbaye<br/>27.1 Oz pk12</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="ind-product-wrapper">
-                        <img src="/assets/images/products/small/figs-in-syrup.png">
-                        <h5>Figs In Syrup</h5>
-                        <p>Brevas<br/>28 Oz pk12</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
+                                </div>
+                            </div>
+                        </div>
+                    {{/em-accordion-item}}
+                    {{#em-accordion-item title="Canned Milk"}}
+                        <div class="catalog-categories-body" id="displayProductsMilkWrapper">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/evaporated-milk.png">
+                                            <h5>Evaporated Milk</h5>
+                                            <p>Leche Evaporada<br/>12 0z pk24</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/condensed-milk.png">
+                                            <h5>Sweet Condensed Milk</h5>
+                                            <p>Leche Condensada<br/>12 0z pk24</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/tubi-snack.png">
+                                            <h5>Tubi Snack</h5>
+                                            <p>Leche Condensada Azucarada<br/>50 GR Unit - 6/12 Boxes</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/em-accordion-item}}
+                    {{#em-accordion-item title="Rice"}}
+                        <div class="catalog-categories-body" id="displayProductsRiceWrapper">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/extra-long-rice.png">
+                                            <h5>Extra Long Grain Rice</h5>
+                                            <p>Arroz De Grano Extra Largo Precocido<br/>50 lb pk1</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/parboiled-long.png">
+                                            <h5>Parboiled Long Grain Rice 50lb</h5>
+                                            <p>Arroz De Grano Largo Precocido<br/>50 lb pk1</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/brown-rice.png">
+                                            <h5>Parboiled Brown Rice 5lb</h5>
+                                            <p>Arroz Integral Precocido<br/>5 lb pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/white-rice.png">
+                                            <h5>Extra Long Grain Rice</h5>
+                                            <p>Arroz De Grano Extra Largo<br/>5 lb pk12/10lb pk6/20lb pk3</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/parboiled-rice.png">
+                                            <h5>Parboiled Long Grain Rice</h5>
+                                            <p>Arroz Precocido De Grano Largo<br/>5 lb pk12/10lb pk6/20lb pk3</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/em-accordion-item}}
+                    {{#em-accordion-item title="Sugar Products"}}
+                        <div class="catalog-categories-body" id="displayProductsSugarWrapper">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/white-sugar.png">
+                                            <h5>White Sugar</h5>
+                                            <p>Azucar Blanca<br/>2lb pk20</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/brown-sugar.png">
+                                            <h5>Turbinado Sugar</h5>
+                                            <p>Azucar Morena<br/>2lb pk20</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/panela-1.png">
+                                            <h5>Hard Brown Sugar 1 Ea.</h5>
+                                            <p>Panela<br/>36 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/panela-4.png">
+                                            <h5>Hard Brown Sugar 4 Ea.</h5>
+                                            <p>Panela<br/>16.3 0z pk24</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/em-accordion-item}}
+                    {{#em-accordion-item title="Canned Beans"}}
+                        <div class="catalog-categories-body" id="displayProductsBeansWrapper">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/black-beans.png">
+                                            <h5>Black Beans</h5>
+                                            <p>Frijoles Negros<br/>4.7 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/cranberry-beans-antiqueno-style.png">
+                                            <h5>Cranberry Beans Antiqueno Style</h5>
+                                            <p>Frijol Antiqueno<br/>4.7 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/cranberry-beans-spicy-hot.png">
+                                            <h5>Cranberry Beans Spicy Hot</h5>
+                                            <p>Frijol Cargamato Picante<br/>4.7 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/cranberry-beans-smoked-flavored.png">
+                                            <h5>Cranberry Beans Smoked Flavored</h5>
+                                            <p>Frijol Cargamato Ahumado<br/>4.7 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/cranberry-beans-water-salt.png">
+                                            <h5>Cranberry Beans with Water and Salt</h5>
+                                            <p>Frijol Cargamato en Agua y Sal<br/>4.7 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/cranberry-beans-tomatos-onions.png">
+                                            <h5>Cranberry Beans with Tomato and Onions</h5>
+                                            <p>Churros<br/>4.7 0z pk12</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/em-accordion-item}}
+                    {{#em-accordion-item title="Pasta"}}
+                        <div class="catalog-categories-body" id="displayProductsPastaWrapper">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/spaghetti.png">
+                                            <h5>Spaghetti</h5>
+                                            <p>Spagueti<br/>16 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/elbows.png">
+                                            <h5>Elbows</h5>
+                                            <p>Codos<br/>16 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/fusilli.png">
+                                            <h5>Fusilli</h5>
+                                            <p>Tornillo<br/>16 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/rigatoni.png">
+                                            <h5>Rigatoni</h5>
+                                            <p>Macarron<br/>16 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/shells.png">
+                                            <h5>Shells</h5>
+                                            <p>Conchas<br/>16 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/noodles.png">
+                                            <h5>Noodles</h5>
+                                            <p>Fideos<br/>16 0z pk12</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/em-accordion-item}}
+                    {{#em-accordion-item title="Frozen Products"}}
+                        <div class="catalog-categories-body" id="displayProductsFrozenWrapper">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-6">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/colombian.png">
+                                            <h5>Colombian Sausage</h5>
+                                            <p>Chorizo Colombiano<br/>1lb pk20</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/mexican.png">
+                                            <h5>Mexican Sausage</h5>
+                                            <p>Chorizo Mexicano<br/>1lb pk20</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/em-accordion-item}}
+                    {{#em-accordion-item title="Condiments"}}
+                        <div class="catalog-categories-body" id="displayProductsCondimentsWrapper">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/hot-sauce.png">
+                                            <h5>Hot Sauce</h5>
+                                            <p>Salsa De Aji picante<br/>6 0z pk24</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/latin-style-hot-seasoning.png">
+                                            <h5>Latin Style Hot Seasoning</h5>
+                                            <p>Aji Criollo<br/>8.5 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/tomatoe-onion-sofrito.png">
+                                            <h5>Tomatoe &amp; Onion Sofrito</h5>
+                                            <p>Hogao<br/>8.46 0z pk24</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/chimichurri.png">
+                                            <h5>Chimichurri</h5>
+                                            <p>Chimichurri<br/>8.4 0z pk24</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/em-accordion-item}}
+                    {{#em-accordion-item title="Sweet Delights"}}
+                        <div class="catalog-categories-body" id="displayProductsSweetsWrapper">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/brown-caramel.png">
+                                            <h5>Brown Caramel</h5>
+                                            <p>Panelitas<br/>4.7 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/guava-cubes-big.png">
+                                            <h5>Guava Cubes</h5>
+                                            <p>Bocadillo De Guayaba<br/>9.87 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/coco-caramel.png">
+                                            <h5>Coconut With Caramel</h5>
+                                            <p>Cocada<br/>4.7 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/green-figs.png">
+                                            <h5>Green Figs With Caremel Spread</h5>
+                                            <p>Panelitas<br/>5.2 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/guava-caramel-fusion.png">
+                                            <h5>Caramel &amp; Guava Fusion</h5>
+                                            <p>Guayaba &amp; Caramelo<br/>4.7 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/guava-tume.png">
+                                            <h5>Guava Tume</h5>
+                                            <p>Tumes<br/>11.28 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/peanut.png">
+                                            <h5>Peanut Nougat</h5>
+                                            <p>Turron De Mani<br/>4.7 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/guava-cream.png">
+                                            <h5>Guava Cream</h5>
+                                            <p>Bocadillo De Guayaba<br/>14.11 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/mix-caramel.png">
+                                            <h5>Mix Caramel</h5>
+                                            <p>Dulce De Leche Tradicional<br/>4.6 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/velez-roll.png">
+                                            <h5>Roll From Velez</h5>
+                                            <p>Valeno Bocadillo De Guayaba<br/>14.8 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/wafer.png">
+                                            <h5>Wafer With Caramel</h5>
+                                            <p>Obleas Y Dulce De Leche Tradicional<br/>5.29 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/guava-crackers.png">
+                                            <h5>Crackers With Guava</h5>
+                                            <p>Gallete Rellena Con Jalea De Guayaba Y Dulce De Leche Tradicional<br/>5.2 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/manjar-blanco.png">
+                                            <h5>Traditional Caramel Spread</h5>
+                                            <p>Manjar Blanco - Dulce De Leche<br/>8.11 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/coco-cubes.png">
+                                            <h5>Coconut Caramel Snacks</h5>
+                                            <p>Coconut Caramel Snacks<br/>1.76 0z pk24</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/leche-cubes.png">
+                                            <h5>Milk Caramel Squares</h5>
+                                            <p>Lechitas<br/>1.76 0z pk24</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/guava-cubes.png">
+                                            <h5>Guava Cube Snacks</h5>
+                                            <p>Bocadillos<br/>1.76 0z pk24</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/em-accordion-item}}
+                    {{#em-accordion-item title="Peppers & Olives in Brine"}}
+                        <div class="catalog-categories-body" id="displayProductsPeppersWrapper">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/alfonso-olives-in-brine.png">
+                                            <h5>Alfonso Olives In Brine</h5>
+                                            <p>Aceitunas En Salmuera<br/>20 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/red-hot-pepper-in-brine.png">
+                                            <h5>Red Hot Pepper In Brine</h5>
+                                            <p>Ajil Rocoto En Salmuera<br/>20 0z pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/yellow-chilli-pepper-in-brine.png">
+                                            <h5>Yellow Chilli Pepper In Brine</h5>
+                                            <p>Ajil Amarillo En Salmuera<br/>4.7 0z pk12</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/em-accordion-item}}
+                    {{#em-accordion-item title="Nectars"}}
+                        <div class="catalog-categories-body" id="displayProductsFruitWrapper">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/purple-drink.png">
+                                            <h5>Purple Corn Drink</h5>
+                                            <p>Chicha Morada<br/>500 ml pk6</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/mango.png">
+                                            <h5>Mango Juice</h5>
+                                            <p>Jugo De Mango<br/>500 ml pk6</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/em-accordion-item}}
+                    {{#em-accordion-item title="Special Condiments & Spices"}}
+                        <div class="catalog-categories-body" id="displayProductsPeruWrapper">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/garlic-paste.png">
+                                            <h5>Garlic Paste</h5>
+                                            <p>Ajo En Pasta<br/>8 Oz pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/basil-pesto-paste.png">
+                                            <h5>Basil Pesto Paste</h5>
+                                            <p>Albahaca En Pasta<br/>8 Oz pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/yellow-chilli-paste.png">
+                                            <h5>Yellow Chilli Paste</h5>
+                                            <p>Pasta De Aji Amarillo<br/>8 Oz pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/panca-pepper-paste.png">
+                                            <h5>Panca Pepper Paste</h5>
+                                            <p>Aji Panca<br/>8 Oz pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/red-hot-pepper-paste.png">
+                                            <h5>Red Hot Pepper Paste</h5>
+                                            <p>Pasta De Aji Rocoto<br/>8 Oz pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/ollucos.png">
+                                            <h5>Ollucos In Brine</h5>
+                                            <p>Ollucos En Salmuera<br/>20 Oz pk24</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/em-accordion-item}}
+                    {{#em-accordion-item title="Baking Mixes"}}
+                        <div class="catalog-categories-body" id="displayProductsBakingWrapper">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/pandebono-mix.png">
+                                            <h5>Pandebono Mix</h5>
+                                            <p>Pandebono<br/>14.1 Oz pk20</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/bunuelo-mix.png">
+                                            <h5>Bunuelo Mix</h5>
+                                            <p>Bunuelos<br/>14.1 Oz pk20</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/yuca-bread-mix.png">
+                                            <h5>Yuca Bread Mix</h5>
+                                            <p>Pan De Yuca<br/>14.1 Oz pk20</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/traditional-custard.png">
+                                            <h5>Traditional Custard</h5>
+                                            <p>Natilla<br/>14.1 Oz pk20</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/churro-mix.png">
+                                            <h5>Churro-Mix</h5>
+                                            <p>Churros<br/>14.1 Oz pk20</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/em-accordion-item}}
+                    {{#em-accordion-item title="Jarred Fruits"}}
+                        <div class="catalog-categories-body" id="displayProductsFruitWrapper">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/soursop-in-syrup.png">
+                                            <h5>Soursop In Syrup</h5>
+                                            <p>Guanabana En Almbar<br/>11.5 Oz pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/peach-palm-fruit.png">
+                                            <h5>Peach Palm Fruit</h5>
+                                            <p>Chontaduro/Pejbaye<br/>27.1 Oz pk12</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="ind-product-wrapper">
+                                            <img src="/assets/images/products/small/figs-in-syrup.png">
+                                            <h5>Figs In Syrup</h5>
+                                            <p>Brevas<br/>28 Oz pk12</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/em-accordion-item}}
+            {{/em-accordion}}
+        </div>    
 
 	{{contact-section}}
 </div>
