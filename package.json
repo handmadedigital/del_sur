@@ -33,9 +33,13 @@
     "ember-cli-qunit": "0.3.13",
     "ember-cli-sass": "4.0.1",
     "ember-cli-uglify": "^1.0.1",
-    "ember-data": "1.0.0-beta.18",
+    "ember-data": "^1.13.7",
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.2",
-    "liquid-fire": "0.19.4"
+    "ember-idx-accordion": "^0.1.1",
+    "express": "^4.13.1",
+    "glob": "^4.5.3",
+    "liquid-fire": "0.19.4",
+    "morgan": "^1.6.1"
   }
 }

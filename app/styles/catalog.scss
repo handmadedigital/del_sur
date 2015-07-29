@@ -43,6 +43,48 @@
 	}
 }
 
+#ember538 .panel-title{
+  text-align: center;
+  color: #fff;
+  font-size: 100px;
+  font-family: 'Amatic SC', cursive;
+  padding: 15px;
+  margin-bottom: 0;
+  margin-top: 0;
+
+  a{
+  font-family: 'Amatic SC', cursive;
+  }
+}
+
+.expanded-product-wrapper {
+  padding-bottom: 70px;
+}
+
+.product-info-wrapper {
+  p{
+    margin: 24px 0 24px 0;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 34px;
+    font-weight: 300;
+  }
+  button {
+    padding: 10px 20px;
+    /* border: #A3B825 solid 2px; */
+    color: #fff;
+    margin: -4px 0 0 10px;
+    font-size: 16px;
+    background: #BDD52D;
+    border-radius: 0;
+    margin:0 15px 0 0;
+    a {
+      color: #fff;
+    }
+  }
+}
+
+
 .catalog-title-banner{
 	h1{
 		text-align: center;
@@ -51,76 +93,88 @@
 		font-family: 'Amatic SC', cursive;
 		padding: 15px;
 		margin-bottom: 0;
-	    margin-top: 0;
+    margin-top: 0;
 	}
 }
 
-#catalogFruitTitleWrapper{
+.ind-product-wrapper{
+  .thumbnailImage {
+    width: 20%;
+    margin: 5%;
+  }
+
+  p{
+    color: #333;
+  }
+}
+
+
+#ember570 .panel-heading, #ember573 .panel-heading{
   background: url('/assets/images/catalog-cta-bg.jpg');
   margin: 0 !important;
 }
 
-#catalogPeruTitleWrapper{
+#ember571 .panel-heading{
   background: url('/assets/images/catalog-cta-peru-bg.jpg');
   margin: 0 !important;
 }
 
-#catalogBakingTitleWrapper {
+#ember572 .panel-heading {
   background: url('/assets/images/catalog-cta-baking-bg.jpg');
   margin: 0 !important;
 }
 
-#catalogBeansTitleWrapper {
+#ember564 .panel-heading {
   background: url('/assets/images/catalog-cta-beans-bg.jpg');
   margin: 0 !important;
 }
 
-#catalogSaltyTitleWrapper{
+#saltyTitle{
   background: url('/assets/images/catalog/banners/salty-title.png');
   margin: 0 !important;
 }
 
-#catalogOilTitleWrapper{
+#oilTitle{
   background: url('/assets/images/catalog/banners/oil-title.png');
   margin: 0 !important;
 }
 
-#catalogMilkTitleWrapper {
+#milkTitle{
   background: url('/assets/images/catalog/banners/milk-title.png');
   margin: 0 !important;
 }
 
-#catalogRiceTitleWrapper {
+#riceTitle{
   background: url('/assets/images/catalog/banners/rice-title.png');
   margin: 0 !important;
 }
 
-#catalogSugarTitleWrapper{
+#sugarTitle{
   background: url('/assets/images/catalog/banners/sugar.png');
   margin: 0 !important;
 }
 
-#catalogPastaTitleWrapper{
+#ember565 .panel-heading{
   background: url('/assets/images/catalog/banners/pasta-title.png');
   margin: 0 !important;
 }
 
-#catalogCondimentsTitleWrapper {
+#ember567 .panel-heading {
   background: url('/assets/images/catalog/banners/condiments-title.png');
   margin: 0 !important;
 }
 
-#catalogSweetsTitleWrapper {
+#ember568 .panel-heading {
   background: url('/assets/images/catalog/banners/sweets.png');
   margin: 0 !important;
 }
 
-#catalogPeppersTitleWrapper {
+#ember569 .panel-heading {
   background: url('/assets/images/catalog/banners/spices-title.png');
   margin: 0 !important;
 }
 
-#catalogFrozenTitleWrapper {
+#ember566 .panel-heading {
   background: url('/assets/images/catalog/banners/frozen-title.png');
   margin: 0 !important;
 }

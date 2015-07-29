@@ -20,7 +20,7 @@ export default Ember.Controller.extend({
 		
 		setInterval(function(){
 			self.setQuote();
-		}, 3000)
+		}, 3000);
 	},
 
 	setQuote: function(){

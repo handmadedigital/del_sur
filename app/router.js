@@ -8,22 +8,18 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('about');
   this.route('recipes');
-  this.route('catalog');
+  this.route('catalog', function() {
+    this.route('salty-snacks');
+  });
   this.route('blogs');
   this.route('contact');
-  this.route('admin', function() {
-    this.route('login');
-    this.route('dashboard');
-    this.route('blogs', function() {
-      this.route('new');
-      this.route('update');
-      this.route('delete');
-    });
-    this.route('recipes', function() {
-      this.route('new');
-      this.route('delete');
-      this.route('update');
-    });
+  this.route('rod');
+
+  this.resource('recepie', function() {
+    this.route('recepie-1');
+    this.route('recepie-2');
+    this.route('recepie-3');
+    this.route('recepie-4');
   });
 });
 

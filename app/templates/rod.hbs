@@ -1,0 +1,35 @@
+	{{#each model as |category|}}
+		<div {{action "displayProducts" category.id}} class="catalog-title-banner" id="{{category.headerBgId}}">
+			<h1>{{category.name}}</h1>
+		</div>
+		<div class="catalog-categories-body" id="{{category.backgroundId}}">
+            <div class="row">
+                <div class="container">
+					{{#if category.displayProducts}}
+						{{#each category.products as |product|}}
+							{{#if product.displayProductInfo}}
+								<div class="col-md-4">
+					                <div class="ind-product-wrapper">
+					                    <img src="{{product.productImg}}">
+					                    <h5>{{product.engName}}</h5>
+					                    <p>{{product.spaName}}<br/>{{product.quantity}}</p>
+					                </div>
+					            </div>
+					        {{else}}
+					        	 <div class="col-md-12">
+					                <div class="ind-product-wrapper">
+					                    <img src="{{product.productImg}}">
+					                    <h5>{{product.engName}}</h5>
+					                    <p>{{product.spaName}}<br/>{{product.quantity}}</p>
+					                </div>
+					            </div>      
+				            {{/if}}    
+						{{/each}}
+					{{/if}}
+				</div>
+		    </div>
+		</div>    				
+	{{/each}}
+
+
+
