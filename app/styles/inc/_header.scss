@@ -32,7 +32,7 @@ nav.main-nav{
 			list-style-type: none;
 			float: right;
 			margin-right: 10%;
-			margin-top: 1.5%;
+			margin-top: 1.3%;
 
       #catalogDownloadButton {
         padding: 10px 20px;
@@ -54,9 +54,15 @@ nav.main-nav{
 					font-weight: 100;
 					font-size: 20px;
 				}
+				a:hover{
+					color: #BDD52D;
+					font-weight: 100;
+					text-underline: none;
+					font-size: 20px;
+				}
 				a.active{
 					border-bottom: solid 3px #a0b61e;
-					padding-bottom: 29px;
+					padding-bottom: 24px;
 				}
 			}
 		}
