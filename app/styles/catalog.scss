@@ -1,18 +1,31 @@
+$break-large: 1200px;
+$break-medium: 994px;
+
 #catalogBanner{
 	background: url('/assets/images/ctalog-main-bk.jpg');
 	width: 100%;
 	padding-bottom: 40px;
 
-  .catalog-title-banner{
-    cursor: pointer;
+  .section-content{
+    p {
+      color: #fff;
+      font-style: italic;
+      font-weight: 400;
+      text-shadow: 1px 1px 1px #333;
+    }
   }
 
 	.catalog-banner-title{
 		text-align: center;
-		margin-top: 20%;
+		margin-top: 21%;
     cursor: pointer;
+    text-shadow: 1px 1px 1px #333;
 
-		h3, h1{
+    @media screen and (max-width: $break-medium) {
+      margin-top: 150px;
+    }
+
+		h3, h2{
 			font-family: 'Amatic SC', cursive;
 		}
 
@@ -20,11 +33,19 @@
 			font-size: 35px;
 		}
 
-		h1{
-			font-size: 65px;
+		h2{
+			font-size: 55px;
 			color: #fff;
 			margin-top: -1%;
 		}
+
+    .section-title-underline {
+        background: #e6f87f;
+        height: 3px;
+        width: 120px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 	}
 
 	.list-catalog-banner-categories{
@@ -48,22 +69,41 @@
 	}
 }
 
-#ember538 .panel-title{
-  text-align: center;
-  color: #fff;
-  font-size: 100px;
-  font-family: 'Amatic SC', cursive;
-  padding: 15px;
-  margin-bottom: 0;
-  margin-top: 0;
+#badgesWrapper {
 
-  a{
-  font-family: 'Amatic SC', cursive;
+  .section-content{
+    margin-top: 3%;
+    margin-bottom: 3%;
+
+    .gmo-free-badges-wrapper {
+      text-align: center;
+
+      img {
+        width: 340px;
+      }
+    }  
   }
+  
 }
 
 .expanded-product-wrapper {
   padding-bottom: 70px;
+
+  .closeProductInfo {
+     position: absolute;
+      right: 0;
+      z-index: 9999;
+      height: 50px;
+      background: 0;
+      outline: 0;
+      border: 0;
+  }
+
+  i {
+    float: right;
+    font-size: 22px;
+    padding: 15px;
+  }
 }
 
 .product-info-wrapper {
@@ -83,8 +123,26 @@
     background: #BDD52D;
     border-radius: 0;
     margin:0 15px 0 0;
+
+    @media screen and (max-width: $break-medium) {
+        width: 100%
+      }
+
     a {
       color: #fff;
+    }
+
+  }
+
+  form {
+    .col-md-3 {
+      @media screen and (max-width: $break-medium) {
+        padding: 5px 0;
+      }
+
+      .form-control {
+        height: 45px;
+      }
     }
   }
 }
@@ -96,13 +154,14 @@
 .catalog-title-banner{
 	h1{
 		text-align: center;
-		color: #fff;
-		font-size: 100px;
-		font-family: 'Amatic SC', cursive;
-		padding: 15px;
-		margin-bottom: 0;
+    color: #fff;
+    font-size: 72px;
+    font-weight: 700;
+    font-family: 'Amatic SC', cursive;
+    padding: 15px;
+    margin-bottom: 0;
     margin-top: 0;
-    -webkit-transition: 0.2s; /* Safari */
+    -webkit-transition: 0.2s;
     transition: 0.2s;
 	}
 }
@@ -113,8 +172,9 @@
 
 .ind-product-wrapper{
   .thumbnailImage {
-    width: 20%;
+    width: 55px;
     margin: 5%;
+    max-height: 80px;
   }
 
   p{

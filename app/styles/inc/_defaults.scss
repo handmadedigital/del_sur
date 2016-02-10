@@ -1,15 +1,20 @@
 $section-title-border: solid 3px #a0b61e;
 .italic{font-style: italic;}
 .center{text-align: center;}
+$break-small: 760px;
 
 .section-title{
 	margin-left: auto;
 	margin-right: auto;
-	width: 30%;
+	width: 40%;
+
+	@media screen and (max-width: $break-small) {
+		width: 80%;
+	}
 
 	h2{
 		text-align: center;
-		font-family: 'Amatic SC', cursive;
+		font-family: 'Amatic SC', Tahoma, Geneva, sans-serif;
 		font-size: 55px;
 	}
 
@@ -26,8 +31,9 @@ $section-title-border: solid 3px #a0b61e;
 	margin-top: 3%;
 	p{
 		font-size: 20px;
-		font-weight: 300;
-		line-height: 220%;
+		font-weight: 400;
+		color: #8A8A8A;
+		line-height: 180%;
 		text-align: center;
 	}
 }
@@ -35,6 +41,5 @@ $section-title-border: solid 3px #a0b61e;
 .section-description{
 	font-style: italic;
 	margin-bottom: 35px;
-	font-size: 24px !important;;
 }
 

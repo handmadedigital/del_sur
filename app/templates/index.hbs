@@ -14,19 +14,25 @@
 		<div class="row">
 			<div class="container">
 				<div class="main-banner-buttons-wrapper">
-					<div class="col-md-4">
-						<button>Catalog</button>
+					<div class="main-banner-buttons">
+						{{#link-to 'catalog'}}<button><p>Products</p></button>{{/link-to}}
 					</div>
-					<div class="col-md-4">
-						<button>Get To Know Us</button>
+					<div class="main-banner-buttons">
+						{{#link-to 'about'}}<button><p>Get To Know Us</p></button>{{/link-to}}
 					</div>
-					<div class="col-md-4">
-						<button>Contact Us</button>
+					<div class="main-banner-buttons">
+						{{#link-to 'contact'}}<button><p>Contact Us</p></button>{{/link-to}}
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	{{#slick-slider autoplay=true arrows=false}}
+		<div class="box"> <img src="/assets/images/main-slider-img-1.jpg"> </div>
+		<div class="box"> <img src="/assets/images/main-slider-img-2.jpg"> </div>
+		<div class="box"> <img src="/assets/images/main-slider-img-3.jpg"> </div>
+	{{/slick-slider}}
 
 	<!-- END MAIN BANNER -->
 
@@ -76,8 +82,8 @@
 						</div>
 
 						<div class="index-recipe-details">
-							<h2>{{recipeTitle}}</h2>
-							<p>{{recipeDescription}}</p>
+							<h2>Codos con Chorizo</h2>
+							<p>Codos Del Sur fáciles, rápidos y jugosos!</p>
 						</div>
 					</div>
 				</div>

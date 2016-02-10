@@ -1,6 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
 @import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700);
-@import url(/assets/fonts/Gotham-XLight.otf);
+@import url(/assets/fonts/AmaticSC-Regular.ttf);
+@import url(/assets/fonts/AmaticSC-Bold.ttf);
+@import url(/assets/fonts/open-sans.light.ttf);
+@import url(/assets/fonts/open-sans.regular.ttf);
+@import url(/assets/fonts/open-sans.semibold.ttf);
 @import 'inc/_header.scss';
 @import 'inc/_defaults.scss';
 @import 'catalog.scss';
@@ -8,22 +12,80 @@
 @import 'contact.scss';
 @import 'recipe.scss';
 @font-face {
-    font-family: Gotham-XLight;
-    src: url(/assets/fonts/Gotham-XLight.otf);
+    font-family: 'Amatic SC';
+    src: url(/assets/fonts/AmaticSC-Regular.ttf) format("truetype");
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Amatic SC';
+    src: url(/assets/fonts/AmaticSC-Bold.ttf) format("truetype");
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'open-sans';
+    src: url(/assets/fonts/open-sans.light.ttf) format("truetype");
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'open-sans';
+    src: url(/assets/fonts/open-sans.regular.ttf) format("truetype");
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'open-sans';
+    src: url(/assets/fonts/open-sans.semibold.ttf) format("truetype");
+    font-weight: 500;
 }
 
+$break-large: 1200px;
+$break-medium: 992px;
+$break-small: 760px;
+$break-x-small: 460px;
+
+
 h1,h2,h3,h4,h5,h6,p,td,span,a,li{
-	font-family: 'Open Sans';
+	font-family: 'Open Sans', sans-serif;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+.desktop-only {
+	display: block;
+
+	@media screen and (max-width: $break-small) {
+		display: none;
+	}
+}
+
+.mobile-only {
+	display: none;
+
+	@media screen and (max-width: $break-small) {
+		display: block;
+	}
+}
+
+a, button, .myelements
+{
+	-ms-touch-action: manipulation;	/* IE10  */
+	touch-action: manipulation;		/* IE11+ */
 }
 
 /*******************************/
 /* INDEX */
 /******************************/
 #mainBanner{
-	background: url('/assets/images/main-bg.jpg');
-  	width: 100%;
-  	height: 869px;
-	background-position:center -211px;
+	position: absolute;
+    width: 100%;
+    z-index: 999;
+    height: 869px;
+    background-position: center -211px;
+
+    @media screen and (max-width: $break-large) {
+		height: 600px;
+	}
 
 	.banner-quote-wrapper{
 		background: rgba(255,255,255,.9);
@@ -33,9 +95,28 @@ h1,h2,h3,h4,h5,h6,p,td,span,a,li{
 		margin-top: 40%;
 		padding:15px;
 
+		@media screen and (max-width: $break-medium) {
+			margin-top: 32%;
+		}
+
+		@media screen and (max-width: $break-small) {
+			margin-top: 30%;
+			width:80%;
+		}
+
+		@media screen and (max-width: $break-x-small) {
+			margin-top: 60%;
+			width:100%;
+		}
+
 		.quote-wrapper{
 			border: solid 2px #746d69;
 			padding: 20px 0;
+
+
+			@media screen and (max-width: $break-small) {
+				padding: 10px 0;
+			}
 
 			h1{
 				padding: 0;
@@ -43,7 +124,21 @@ h1,h2,h3,h4,h5,h6,p,td,span,a,li{
 				font-family: 'Amatic SC', cursive;
 				font-size: 60px;
 				margin-left: 13%;
-				span{
+
+				@media screen and (max-width: $break-large) {
+					font-size: 48px;
+				}
+
+				@media screen and (max-width: $break-small) {
+					margin-left: 10%;
+					font-size: 32px;
+				}
+
+				@media screen and (max-width: $break-x-small) {
+					font-size: 26px;
+					margin-left: 5%;
+				}
+				span {
 					font-family: 'Amatic SC', cursive;
 					color: #a0b61e;
 					position: absolute;
@@ -63,33 +158,80 @@ h1,h2,h3,h4,h5,h6,p,td,span,a,li{
 
 	.main-banner-buttons-wrapper{
 		text-align: center;
-    margin-top: 16%;
+    	margin-top: 16%;
 
-		button{
-			text-align: center;
-			font-family: 'Amatic SC', cursive;
-			color: #fff;
-			font-size: 45px;
-			background: rgba(0,0,0,.5);
-			border: none;
-			padding: 0 15px;
+    	@media screen and (max-width: $break-large) {
+			margin-top: 8%;
 		}
+
+		@media screen and (max-width: $break-small) {
+			margin-top: 12%;
+		}
+
+		@media screen and (max-width: $break-x-small) {
+			margin-top: 18%;
+		}
+
+		.main-banner-buttons {
+			width: 33%;
+			float: left;
+
+			button{
+				text-align: center;
+			    font-family: 'Amatic SC', cursive;
+			    color: #333;
+			    font-size: 45px;
+			    background: rgba(255, 255, 255, 0.9);
+			    border: none;
+
+			    @media screen and (max-width: $break-large) {
+					font-size: 32px;
+				}	
+
+				@media screen and (max-width: $break-small) {
+					font-size: 22px;
+					font-weight: 800;
+				}
+
+				@media screen and (max-width: $break-x-small) {
+					font-size: 16px;
+					font-weight: 800;
+				}
+			    p{
+			        font-family: 'Amatic SC', cursive;
+				    margin: 4px 0px;
+				    line-height: 50px;
+				    padding: 0 10px;
+				    border: solid 1px;
+
+				    @media screen and (max-width: $break-small) {
+						line-height: 40px;
+					}
+			    }
+			}
+		}
+		
 	}
 }
 
-#ourPhilosophyWrapper{
-	padding: 60px;
-	padding-bottom: 90px;
+.sticky-wrapper {
+	z-index: 99999;
+	position: absolute;
+	width: 100%;
 
-	.gmo-free-badges-wrapper{
-		text-align: center;
-		margin-top: 5%;
-
-		img{
-			width: 100%;
-		}
+	.sticky {
+		width: 100%;
 	}
 }
+
+.slick-slider {
+	@media screen and (max-width: $break-large) {
+		height: 600px;
+		overflow: hidden;
+	}
+    
+}
+
 
 #indexRecipesWrapper{
 	background: url('/assets/images/recepies-bg.jpg');
@@ -108,6 +250,22 @@ h1,h2,h3,h4,h5,h6,p,td,span,a,li{
 			border-radius: 50%;
 		  	width: calc(20% + 12px);
 		  	margin: 0 -6px 0 -6px;
+
+		  	@media screen and (max-width: $break-large) {
+				border: solid 8px rgba(0, 0, 0, 0.1);
+				border-radius: 50%;
+				width: calc(20% + 8px);
+				margin: 0 -4px 0 -4px;
+			}
+
+			@media screen and (max-width: $break-x-small) {
+				border: solid 4px rgba(0, 0, 0, 0.1);
+				border-radius: 50%;
+				width: calc(20% + 4px);
+				margin: 0 -2px 0 -2px;
+			}
+
+			
 		}
 		img.active{
 			border-color: #d5ee47;
@@ -119,6 +277,13 @@ h1,h2,h3,h4,h5,h6,p,td,span,a,li{
 	.index-recipe-details{
 		margin-top: 220px;
 		padding: 20px;
+
+		@media screen and (max-width: $break-large) {
+		    margin-top: 190px;
+		}
+		@media screen and (max-width: $break-x-small) {
+		    margin-top: 120px;
+		}
 		h2{
 			font-family: 'Amatic SC', cursive;
 			text-align: center;
@@ -138,6 +303,14 @@ h1,h2,h3,h4,h5,h6,p,td,span,a,li{
 	    text-align: center;
 	    color: #fff;
 	    font-size: 65px;
+
+	    @media screen and (max-width: $break-large) {
+			font-size: 52px;
+		}
+
+		@media screen and (max-width: $break-x-small) {
+			font-size: 36px;
+		}
 	}
 
 	.call-to-action-input{
@@ -208,7 +381,55 @@ h1,h2,h3,h4,h5,h6,p,td,span,a,li{
 	}
 }
 
-footer{
-	background: #c4da44;
-	height: 55px;
+
+.footer-section-wrapper {
+  	padding: 10%;
+
+  	@media screen and (max-width: $break-large) {
+		padding: 2%;
+	}
+}
+
+#footerLogo {
+  width: 40%;
+  float: left;
+  padding: 20px 0;
+}
+
+footer.footer {
+	background-color: #CEE255;
+	font-size: 16px;
+	padding: 20px;
+	line-height: 24px;
+	color: rgba(0, 0, 0, 0.51);
+
+	@media screen and (max-width: $break-x-small) {
+		padding: 20px 0;
+	}
+
+	h3{
+		color: rgba(0, 0, 0, 0.8);
+		margin-bottom: 20px;
+	}
+
+	ul {
+		list-style: none;
+		padding-left: 0;
+
+		li {
+			padding: 10px 0;
+			border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	a {
+	    color: rgba(0, 0, 0, 0.51);
+	}
+}
+
+.bottom-footer {
+  padding: 25px 0 12px 0;
+  background-color: #A7B937;
+  color: #fff;
+  text-align: center;
 }

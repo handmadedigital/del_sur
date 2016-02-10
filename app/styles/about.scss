@@ -1,3 +1,6 @@
+$break-large: 1200px;
+$break-medium: 994px;
+
 #aboutBanner{
 	background: url('/assets/images/about-main-bg.jpg');
 	width: 100%;
@@ -6,14 +9,23 @@
 	.section-title{
 		margin-top: 20%;
 		color: #fff;
+		text-shadow: 1px 1px 1px #333;
+		@media screen and (max-width: $break-medium) {
+			margin-top: 150px;
+		}
 	}
 
 	.section-content{
 		padding: 0 80px;
+
+		@media screen and (max-width: $break-medium) {
+	      padding: 0 20px;
+	    }
 		p{
 			color: #fff;
 			font-style: italic;
 			font-weight: 400;
+			text-shadow: 1px 1px 1px #333;
 		}
 	}
 }
@@ -22,26 +34,61 @@
 	background: #a0b61e;
 	padding:15px;
 
+	@media screen and (max-width: $break-medium) {
+	    text-align: center;
+	}
+
 	h1{
 		font-family: 'Amatic SC', cursive;
 		color: #fff;
 		font-size: 55px;
+
+		@media screen and (max-width: $break-large) {
+			font-size: 40px;
+		}		    
 	}
 
 	button{
 		background: #fff;
 		color: #a0b61e;
 		font-size: 14px;
-		  padding: 12px 30px;
-  margin-top: 17%;
-  margin-left: -65%;
-  border: #fff;
+		padding: 12px 30px;
+		margin-top: 17%;
+		margin-left: -65%;
+		border: #fff;
+		@media screen and (max-width: $break-large) {
+			margin-bottom: 17%;
+		}
+		@media screen and (max-width: $break-medium) {
+		    margin: 0 0 0 0;
+		}
+
 	}
 }
 
-#aboutOurFamilyWrapper{
-	background: url('/assets/images/our-family-bk.jpg');
+#ourPhilosophyWrapper {
+	padding: 60px 20px;
+
+	.gmo-free-badges-wrapper{
+		text-align: center;
+		margin-top: 5%;
+
+		img{
+			width: 340px;
+		}
+	}
+}
+
+#socialResponsibilityWrapper {
+	padding: 60px 20px;
+}
+
+#aboutOurFamilyWrapper {
+	background: url('/assets/images/team-members.png');
 	width: 100%;
+	text-align: center;
+	background-position: 0 -200px;
+	padding-bottom: 4%;
 
 	.section-title{
 		margin-top: 100px;
@@ -50,6 +97,29 @@
 	img{
 		width: 100%;
 		margin-top: 50px;
-		opacity: 0.3;
+		opacity: 0;
+		display: none;
+	}
+
+	.ember-text-area {
+	    height: 150px !important;
+	    width: 100%;
+	}
+
+	.form-group {
+    	opacity: 0.8;
+    }
+
+	button{
+		background: rgb(160, 182, 30);
+		color: rgb(255, 255, 255);
+		font-size: 14px;
+		padding: 12px 30px;
+		border: rgb(255, 255, 255);
+		border-image-source: initial;
+		border-image-slice: initial;
+		border-image-width: initial;
+		border-image-outset: initial;
+		border-image-repeat: initial;
 	}
 }

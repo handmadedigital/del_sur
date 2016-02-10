@@ -8,19 +8,19 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('about');
   this.route('recipes');
-  this.route('catalog', function() {
-    this.route('salty-snacks');
-  });
+  this.route('catalog');
   this.route('blogs');
   this.route('contact');
-  this.route('rod');
 
   this.resource('recepie', function() {
-    this.route('recepie-1');
-    this.route('recepie-2');
-    this.route('recepie-3');
-    this.route('recepie-4');
+    this.route('flan');
+    this.route('tres-leches');
+    this.route('codos-con-chorizo');
+    this.route('rice-with-beans');
+    this.route('pork-and-bean-stew');
+    this.route('lomo-salteado');
   });
+
 });
 
 export default Router;

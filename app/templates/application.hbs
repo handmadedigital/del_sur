@@ -1,25 +1,46 @@
+{{#sticky-container options=myStickyOptions}}
 <div id="header">
 	<nav class="main-nav">
 		<div class="row">
-			<div class="col-md-2">
-				<div class="nav-brand">
-					<img src="/assets/images/logo.png">
-				</div>
+
+			<div class="nav-brand">
+				<img src="/assets/images/logo.png" />
 			</div>
-			<div class="col-md-10">
-				<div class="main-nav-menu">
-					<ul class="list-main-nav-menu">
-						<li>{{#link-to 'index'}}Home{{/link-to}}</li>
-						<li>{{#link-to 'about'}}About{{/link-to}}</li>
-						<li>{{#link-to 'catalog'}}Products{{/link-to}}</li>
-						<li>{{#link-to 'recipes'}}Recipes{{/link-to}}</li>
-						<li>{{#link-to 'contact'}}Contact{{/link-to}}</li>
-              <li id="catalogDownloadButton"><a href="/assets/pdf/delsur-products-catalog2.pdf" target="_blank">View Catalog</a></li>
-					</ul>
+
+			<div class="main-nav-menu">
+				<ul class="list-main-nav-menu">
+					<li>{{#link-to 'index'}}Home{{/link-to}}</li>
+					<li>{{#link-to 'about'}}About{{/link-to}}</li>
+					<li>{{#link-to 'catalog'}}Products{{/link-to}}</li>
+					<li>{{#link-to 'recipes'}}Recipes{{/link-to}}</li>
+					<li>{{#link-to 'contact'}}Contact{{/link-to}}</li>
+          			<li id="catalogDownloadButton"><a href="/assets/pdf/delsur-products-catalog2.pdf" target="_blank">View Catalog</a></li>
+				</ul>
+
+				<div class="mobile-menu">
+					<button id="mobileMenuButton" {{action 'togglePopMenu' on="click"}}><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span> </button> 
+					<div id="popMenu">
+						<ul class="list-mobile-nav-menu">
+							<li>{{#link-to 'index'}}Home{{/link-to}}</li>
+							<li>{{#link-to 'about'}}About{{/link-to}}</li>
+							<li>{{#link-to 'catalog'}}Products{{/link-to}}</li>
+							<li>{{#link-to 'recipes'}}Recipes{{/link-to}}</li>
+							<li>{{#link-to 'contact'}}Contact{{/link-to}}</li>
+							<li id="catalogDownloadButton"><a href="/assets/pdf/delsur-products-catalog2.pdf" target="_blank">View Catalog</a></li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
 				</div>
+
 			</div>
+
 		</div>
 	</nav>
 </div>
+{{/sticky-container}}
 
 {{liquid-outlet}}
+
+{{social-icons}}
+
+{{main-footer}}

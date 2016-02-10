@@ -1,0 +1,9 @@
+{
+  "firebase": "del-sur-test",
+  "public": "dist",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

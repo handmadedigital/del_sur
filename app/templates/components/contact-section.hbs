@@ -9,32 +9,47 @@
 					<div class="section-content">
 						<p class="section-description">Now that you know a bit about us {{#link-to 'contact'}}Contact Us{{/link-to}} below, we love listening to what our customers have to say!</p>
 						<div class="contact-info-wrapper">
-							<ul class="list-contact-info">
+							<ul class="list-contact-info desktop-only">
 							  <li><i class="glyphicon glyphicon-envelope"></i></li>
 							  <li><i class="glyphicon glyphicon-globe"></i></li>
 							  <li><i class="glyphicon glyphicon-earphone"></i></li>
 							</ul>
-							<ul class="list-delsure-info">
+							<ul class="list-delsure-info desktop-only">
 								<li> lasmarketing@logisticalliance.com</li>
 								<li>7975 NorthWest 154th Street Suite 310A<br/>Miami Lakes
                     FL 33016</li>
 								<li>(786) 332-3616</li>
-							</ul>
+							</ul>	
+
+							<ul class="mobile-list-contact-info mobile-only">
+								<li>
+									<i class="glyphicon glyphicon-envelope"></i>
+									<p>lasmarketing@logisticalliance.com</p>
+								</li>
+								<li>
+									<i class="glyphicon glyphicon-globe"></i>
+									<p>7975 NorthWest 154th Street Suite 310A<br>Miami Lakes FL, 33016</p>
+                    			</li>
+								<li>
+									<i class="glyphicon glyphicon-earphone"></i>
+									<p>(786) 332-3616</p>
+								</li>
+							</ul>						
 						</div>
 						<div class="contact-form-wrapper">
 							<div class="row">
 								<div class="col-md-10 col-md-offset-1">
-									<form>
+									<form {{action 'sendMandrillEmail' on="submit"}}>
 										<div class="form-group">
-											{{input value=name placeholder="Name" class="form-control"}}
+											{{input value=name placeholder="Name" class="form-control name"}}
 										</div>
 										<div class="form-group">
-											{{input type="email"  placeholder="Email" class="form-control"}}
+											{{input type="email" placeholder="Email" class="form-control email"}}
 										</div>
 										<div class="form-group">
-											{{textarea value=name placeholder="Your Message" class="form-control"}}
+											{{textarea value=message placeholder="Your Message" class="form-control message"}}
 										</div>
-                      					<button class="contact-form-btn">Send</button>
+                      					<a type="submit" value="Submit"><button class="contact-form-btn">Send</button></a>
 									</form>
 								</div>
 							</div>
